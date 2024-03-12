@@ -1,9 +1,9 @@
 // backend/routes/account.js
-import { Router } from 'express';
-import { authMiddleware } from '../middleware';
-import { Account } from '../db';
+const express = require('express');
+const { authMiddleware } = require('../middleware');
+const { Account } = require('../db');
 
-const router = Router();
+const router = express.Router();
 
 router.get("/balance", authMiddleware, async (req, res) => {
     const account = await Account.findOne({
@@ -52,4 +52,4 @@ router.post("/transfer", authMiddleware, async (req, res) => {
     });
 });
 
-export default router;
+module.exports = router;
