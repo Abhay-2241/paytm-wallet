@@ -1,3 +1,3 @@
-module.export = {
+module.exports = {
     JWT_SECRET : "Abhaysecret"
 }

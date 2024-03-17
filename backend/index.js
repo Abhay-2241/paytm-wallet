@@ -1,17 +1,14 @@
-const express = require("express");
+// backend/index.js
+const express = require('express');
 const cors = require("cors");
+const rootRouter = require("./routes/index");
 
-// const mongoose = require("mongoose");
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-
-const mainRouter = require("./route/index");
-app.use("/api/v1", mainRouter);
-app.use("/api/v2", mainRouter);
-
+app.use("/api/v1", rootRouter);
 
 app.listen(3000);
 
